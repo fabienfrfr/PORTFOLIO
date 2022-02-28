@@ -1,5 +1,6 @@
 # PortFolio
-
+""export FLASK_APP=app""
+flask run
 
 
 # greetingApp_FLASK
