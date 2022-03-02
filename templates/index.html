@@ -1,21 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Say Hello</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-</head>
-<body>
-    <img src="https://raw.githubusercontent.com/MariyaSha/SimpleGreetingApp/main/logo.png">
-    <br>
-    <form action="greet" method="post">
-        {% for message in get_flashed_messages() %}
-             <p>{{ message }}</p>
-         {% endfor %}
-        <br>
-        <input type="text" name="name_input">
-        <br>
-        <input type="submit" value="GREET" id="greet">
-    </form>
+
+<body style="font-family:arial, sans-serif">
+    <h1 style="background:lightblue;padding:10px">
+            Plotly Chart Demo
+    </h1>
+    
+    <p>Click to see charts on different pages</p>
+    
+    <h1><a href="chart1">Fruit in North America</a></h1>
+    <h1><a href="chart2">Vegetables in Europe</a></h1>
+
 </body>
 </html>
