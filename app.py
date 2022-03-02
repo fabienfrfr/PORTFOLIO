@@ -10,6 +10,7 @@ https://youtu.be/6plVs_ytIH8
 
 from flask import Flask, render_template, request, flash
 import pandas as pd
+import geopandas as gpd
 import json
 import plotly
 import plotly.express as px
@@ -19,6 +20,8 @@ app.secret_key = "manbearpig_MUDMAN888"
 
 @app.route('/')
 def index():
+    french_dep = gpd.read_file('departement-20220101-shp/dep.shp')
+    french_dep = french_dep[french_dep.dep != '97']
     return render_template('index.html')
 
 @app.route('/chart1')
