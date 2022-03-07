@@ -20,9 +20,14 @@ app.secret_key = "manbearpig_MUDMAN888"
 
 @app.route('/')
 def index():
+    ## geopandas
     french_dep = gpd.read_file('departement-20220101-shp/dep.shp')
     french_dep = french_dep[french_dep.dep != '97']
-    return render_template('index.html')
+    ##
+    fig = px.choropleth(french_dep, geojson=french_dep.geometry, locations=french_dep.index, color="surf_ha")
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    ##
+    return render_template('index.html', graphJSON=graphJSON)
 
 @app.route('/chart1')
 def chart1():
