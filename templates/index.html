@@ -1,21 +1,13 @@
-<!doctype html>
-<html>
+{% extends 'layout.html' %}
 
-<body style="font-family:arial, sans-serif">
-    <h1 style="background:lightblue;padding:10px">
-            Plotly Chart Demo
-    </h1>
-    
-    <p>Click to see charts on different pages</p>
-    
-    <h1><a href="chart1">Fruit in North America</a></h1>
-    <h1><a href="chart2">Vegetables in Europe</a></h1>
+{% block body %}
+<div class="jumbotron">
+    <h1 class="display-4">Bootstrap starter template by {{ app_data['author'] }} </h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <p>Title: {{ app_data['html_title'] }}</p>
 
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<script type="text/javascript">
-    var graphs = {{graphJSON | safe}};
-    Plotly.plot('chart',graphs,{});        
-</script>
-
-</body>
-</html>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <a class="btn btn-primary btn-lg" href="/contact" role="button">Contact</a>
+  </div>
+{% endblock %}

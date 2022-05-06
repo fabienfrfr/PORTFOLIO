@@ -1,11 +1,7 @@
-# PortFolio
-""export FLASK_APP=app""
-flask run
+# basic-flask-template
+
+$ pip install -r requirements.txt
+$ python app.py
 
 
-# FLASK plot visualization
-a simple greeting app built with flask, ready to deploy to Heroku
-
-Don't forget to add requirements library in file (pip freeze)
-
-IN PROGRESS
+Your app should now be running on [localhost:5000](http://localhost:5000/).
